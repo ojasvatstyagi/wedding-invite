@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState, useLayoutEffect } from "react";
 import Layout from "./components/ui/Layout";
 import { Scroll } from "@react-three/drei";
 import Scene3D from "./components/3D/Scene3D";
@@ -8,28 +8,12 @@ import WelcomeSection from "./components/sections/WelcomeSection";
 import EventTimeline from "./components/sections/EventTimeline";
 import VenueInfo from "./components/sections/VenueInfo";
 import PhotoGallery from "./components/sections/PhotoGallery";
-import gsap from "gsap";
 
 import AudioPlayer from "./components/ui/AudioPlayer";
 import LoadingScreen from "./components/ui/LoadingScreen";
 
 function App() {
   const [hasStarted, setHasStarted] = useState(false);
-  const overlayRef = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    // Entrance Animation for the UI
-    const ctx = gsap.context(() => {
-      gsap.from(overlayRef.current, {
-        y: 50,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        delay: 0.5,
-      });
-    });
-    return () => ctx.revert();
-  }, []);
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -157,14 +141,11 @@ function App() {
 
         {/* Overlay UI - Removed from DOM when started to prevent overlap */}
         {!hasStarted && (
-          <div
-            ref={overlayRef}
-            className="absolute inset-0 z-50 flex flex-col items-center justify-center transition-opacity duration-1000"
-          >
+          <div className="absolute inset-0 z-50 flex flex-col items-center justify-center transition-opacity duration-1000">
             {/* Darker semi-transparent background for contrast against the red gradient */}
             {/* Darker semi-transparent background for contrast against the red gradient */}
             <div
-              className={`bg-black/60 backdrop-blur-xl p-10 rounded-xl border border-gold-400/50 shadow-2xl text-center max-w-md mx-4 animate-in fade-in zoom-in duration-500`}
+              className={`bg-black/60 backdrop-blur-xl p-10 rounded-xl border border-gold-400/50 shadow-2xl text-center max-w-md mx-4 animate-in fade-in zoom-in duration-500 transform-gpu backface-hidden`}
             >
               <h1 className="font-serif text-5xl md:text-7xl text-gold-300 mb-4 drop-shadow-lg">
                 Anushka & Akshay
