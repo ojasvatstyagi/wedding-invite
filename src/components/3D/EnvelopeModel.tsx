@@ -6,7 +6,7 @@ import gsap from "gsap";
 import ParticleBurst from "./ParticleBurst";
 
 function CardMaterial() {
-  const texture = useTexture("/images/ganesh.png");
+  const texture = useTexture(`${import.meta.env.BASE_URL}images/ganesh.png`);
   return (
     <meshStandardMaterial map={texture} roughness={0.4} transparent={true} />
   );

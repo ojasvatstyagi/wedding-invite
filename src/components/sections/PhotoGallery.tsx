@@ -5,37 +5,37 @@ export default function PhotoGallery() {
 
   const photos = [
     {
-      url: "images/gallery_1_haldi.png",
+      url: `${import.meta.env.BASE_URL}images/gallery_1_haldi.png`,
       title: "Haldi Ceremony",
       description:
         "An event of love and blessings where turmeric paste is applied to the bride and groom.",
     },
     {
-      url: "images/gallery_2_mehendi.png",
+      url: `${import.meta.env.BASE_URL}images/gallery_2_mehendi.png`,
       title: "Mehendi & Sangeet",
       description:
         "Adorning hands with intricate henna designs and dancing the night away with joy.",
     },
     {
-      url: "images/gallery_3_wedding_portrait.png",
+      url: `${import.meta.env.BASE_URL}images/gallery_3_wedding_portrait.png`,
       title: "The Wedding Vows",
       description:
         "The sacred moment we promise our diverse forevers to one another.",
     },
     {
-      url: "images/gallery_4_decor_details.png",
+      url: `${import.meta.env.BASE_URL}images/gallery_4_decor_details.png`,
       title: "Decor & Details",
       description:
         "Every corner blooming with flowers and lights to celebrate our union.",
     },
     {
-      url: "images/gallery_5_reception_dance.png",
+      url: `${import.meta.env.BASE_URL}images/gallery_5_reception_dance.png`,
       title: "Dance Night",
       description:
         "A night of celebration, music, and gratitude with our loved ones.",
     },
     {
-      url: "images/bride_groom_illustration.png",
+      url: `${import.meta.env.BASE_URL}images/bride_groom_illustration.png`,
       title: "Anushka & Akshay",
       description:
         "Two souls, one heart, embarking on a beautiful journey together.",

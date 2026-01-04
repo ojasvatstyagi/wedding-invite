@@ -100,7 +100,9 @@ function App() {
                       {/* Decorative Ganesh Image */}
                       <div className="w-32 md:w-40 animate-pulse">
                         <img
-                          src="/images/ganesh_rsvp.png"
+                          src={`${
+                            import.meta.env.BASE_URL
+                          }images/ganesh_rsvp.png`}
                           alt="Ganesh Ji"
                           className="w-full h-auto drop-shadow-[0_0_15px_rgba(212,175,55,0.5)]"
                         />
@@ -203,14 +205,14 @@ function App() {
       {/* Global Sticky Corner Borders */}
       <div className="pointer-events-none fixed top-0 left-0 z-[60] w-40 md:w-56 lg:w-80 opacity-90 mix-blend-screen">
         <img
-          src="/images/gold_corner_tl.png"
+          src={`${import.meta.env.BASE_URL}images/gold_corner_tl.png`}
           alt="Decorative Corner Top Left"
           className="w-full h-auto drop-shadow-lg"
         />
       </div>
       <div className="pointer-events-none fixed bottom-0 right-4 z-[60] w-40 md:w-56 lg:w-80 opacity-90 mix-blend-screen">
         <img
-          src="/images/gold_corner_br.png"
+          src={`${import.meta.env.BASE_URL}images/gold_corner_br.png`}
           alt="Decorative Corner Bottom Right"
           className="w-full h-auto drop-shadow-lg"
         />

@@ -31,7 +31,7 @@ export default function ParticleBurst({
 
   const dummy = useMemo(() => new THREE.Object3D(), []);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (!mesh.current || !active) return;
 
     // If not active, hide everything

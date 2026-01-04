@@ -11,7 +11,7 @@ const events = [
     time: "6:00 PM",
     description: "The grand entrance of the groom with music and dancing.",
     color: "bg-red-900/40 border-gold-500/30",
-    image: "/images/arrival_of_barat.png", // Festive vibe
+    image: `${import.meta.env.BASE_URL}images/arrival_of_barat.png`, // Festive vibe
   },
   {
     title: "Welcome Procession",
@@ -19,7 +19,7 @@ const events = [
     time: "6:30 PM",
     description: "Welcoming the guests and the groom's family.",
     color: "bg-gold-900/40 border-gold-500/30",
-    image: "/images/welcome_procession.png", // Welcoming vibe
+    image: `${import.meta.env.BASE_URL}images/welcome_procession.png`, // Welcoming vibe
   },
   {
     title: "The Banquet",
@@ -27,7 +27,7 @@ const events = [
     time: "7:00 PM",
     description: "A delicious feast to celebrate the union.",
     color: "bg-red-900/40 border-gold-500/30",
-    image: "/images/wedding_venue_illustration.png", // Celebration
+    image: `${import.meta.env.BASE_URL}images/wedding_venue_illustration.png`, // Celebration
   },
   {
     title: "Vidai Ceremony",
@@ -35,7 +35,7 @@ const events = [
     time: "Starlit Night",
     description: "In the shade of stars, a new journey begins.",
     color: "bg-gold-900/40 border-gold-500/30",
-    image: "/images/vidai_ceremony.png", // Atmospheric
+    image: `${import.meta.env.BASE_URL}images/vidai_ceremony.png`, // Atmospheric
   },
 ];
 

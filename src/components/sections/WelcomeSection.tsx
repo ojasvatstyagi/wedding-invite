@@ -17,7 +17,7 @@ export default function WelcomeSection() {
         {/* Royal Portrait */}
         <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-gold-500/50 shadow-2xl mb-8">
           <img
-            src="/images/invited.png"
+            src={`${import.meta.env.BASE_URL}images/invited.png`}
             alt="Anushka and Akshay"
             className="w-full h-full object-cover"
           />

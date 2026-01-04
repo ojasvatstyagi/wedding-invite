@@ -12,7 +12,6 @@ export default function ParticleSystem({
   color = "#D4AF37",
 }: ParticleSystemProps) {
   const mesh = useRef<THREE.InstancedMesh>(null);
-  const lightMesh = useRef<THREE.InstancedMesh>(null);
 
   // Generate random positions and speeds for particles
   const particles = useMemo(() => {
@@ -31,7 +30,7 @@ export default function ParticleSystem({
 
   const dummy = useMemo(() => new THREE.Object3D(), []);
 
-  useFrame((state) => {
+  useFrame(() => {
     if (!mesh.current) return;
 
     particles.forEach((particle, i) => {
