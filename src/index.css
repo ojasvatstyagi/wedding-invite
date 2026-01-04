@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-gold-100: #f9f1d8;
+  --color-gold-200: #f0deaa;
+  --color-gold-300: #e6cb7d;
+  --color-gold-400: #d4af37;
+  --color-gold-DEFAULT: #d4af37;
+  --color-gold-500: #b4941f;
+  --color-gold-600: #8c7318;
+
+  --color-ivory-100: #fffff9;
+  --color-ivory-200: #fffff0;
+  --color-ivory-300: #f5f5dc;
+  --color-ivory-DEFAULT: #fdfbf7; /* Slightly warmer default */
+  --color-ivory-dark: #ebe5ce; /* New darker shade */
+
+  --color-burgundy-100: #a03040;
+  --color-burgundy-DEFAULT: #800020;
+  --color-burgundy-800: #600018;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-script: "Great Vibes", cursive;
+}
+
+@layer base {
+  body {
+    /* Royal Red Gradient background matching the card */
+    background: radial-gradient(circle at center, #7e121d 0%, #4a0505 100%);
+    @apply font-sans text-[#F9F4E8] overflow-x-hidden antialiased;
+  }
+}
