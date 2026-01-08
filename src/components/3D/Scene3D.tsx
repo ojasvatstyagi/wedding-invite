@@ -4,7 +4,7 @@ import {
   Environment,
   ScrollControls,
 } from "@react-three/drei";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import ParticleSystem from "./ParticleSystem";
 
 interface Scene3DProps {
@@ -12,6 +12,20 @@ interface Scene3DProps {
 }
 
 export default function Scene3D({ children }: Scene3DProps) {
+  const [pages, setPages] = useState(8);
+
+  useEffect(() => {
+    const updatePages = () => {
+      // Mobile needs more scroll space because elements stack vertically
+      const isMobile = window.innerWidth < 768;
+      setPages(isMobile ? 12 : 8);
+    };
+
+    updatePages();
+    window.addEventListener("resize", updatePages);
+    return () => window.removeEventListener("resize", updatePages);
+  }, []);
+
   return (
     <div className="absolute inset-0 z-0">
       <Canvas shadows dpr={[1, 2]}>
@@ -39,7 +53,7 @@ export default function Scene3D({ children }: Scene3DProps) {
           <ParticleSystem count={300} color="#D4AF37" />
 
           {/* Damping=0 uses native browser scroll, essential for GSAP ScrollTrigger to work reliably without a scroller proxy */}
-          <ScrollControls pages={8} damping={0}>
+          <ScrollControls pages={pages} damping={0}>
             {children}
           </ScrollControls>
         </Suspense>
